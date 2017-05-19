@@ -23,6 +23,7 @@ export class ProfileComponent implements OnInit {
     this.githubService.updateUser(this.username);
 
     console.log(this.username);
+    // Observables로 받을때는 subscribe 를 사용한다.
     this.githubService.getUser().subscribe(user => {
       console.log(user);
       this.user = user;

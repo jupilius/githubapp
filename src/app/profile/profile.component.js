@@ -8,7 +8,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var github_service_1 = require("../services/github.service");
 var ProfileComponent = (function () {
@@ -22,6 +21,7 @@ var ProfileComponent = (function () {
         var _this = this;
         this.githubService.updateUser(this.username);
         console.log(this.username);
+        // Observables로 받을때는 subscribe 를 사용한다.
         this.githubService.getUser().subscribe(function (user) {
             console.log(user);
             _this.user = user;
