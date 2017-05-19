@@ -15,6 +15,7 @@ export class GithubService {
     let params = new URLSearchParams();
 
     params.set('callback', 'JSONP_CALLBACK');
+    // 다른 싸이트에 있는 정보를 요청할때 jsonp를 사용한다.
     return this.jsonp.get('https://api.github.com/users/' + this.username, {search: params})
       .map(res => <string[]>res.json().data);
   }
